@@ -1,6 +1,6 @@
 
 local local_plugins = {
-    {
+    --[[{
         "harpoon",
         dir = "~/personal/harpoon",
         config = function()
@@ -16,7 +16,7 @@ local local_plugins = {
             vim.keymap.set("n", "<C-n>", function() harpoon:list():select(3) end)
             vim.keymap.set("n", "<C-s>", function() harpoon:list():select(4) end)
         end
-    },
+    },--]]
     {
         "vim-apm", dir = "~/personal/vim-apm",
         config = function()

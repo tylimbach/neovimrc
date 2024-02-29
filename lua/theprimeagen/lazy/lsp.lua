@@ -29,6 +29,11 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "tsserver",
+                "jsonls",
+                "clangd",
+                "cmake",
+                "html",
+                "cssls"
             },
             handlers = {
                 function(server_name) -- default handler (optional)
