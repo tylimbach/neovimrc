@@ -15,6 +15,8 @@ require("lazy").setup({
     spec = "theprimeagen.lazy",
     change_detection = { notify = false }
 })
+
+ColorMyPencils()
 --[[
 require("lazy").setup({
   -- use("~/personal/harpoon")
@@ -45,7 +47,7 @@ require("lazy").setup({
 		  {"rafamadriz/friendly-snippets"},
 	  }
   }
-  
+
   use   {
     "theprimeagen/harpoon",
     branch = "harpoon2",

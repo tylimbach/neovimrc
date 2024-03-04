@@ -1,6 +1,7 @@
 function ColorMyPencils(color)
-	color = color or "rose-pine"
+	color = color or "gruvbox"
 	vim.cmd.colorscheme(color)
+    vim.cmd([[colorscheme gruvbox]])
 
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
@@ -35,20 +36,113 @@ return {
         name = "rose-pine",
         config = function()
             require('rose-pine').setup({
-                -- variant = "moon",
-                -- dark_variant = "moon",
+                variant = "dawn",
+                -- dark_variant = "dawn",
+                transparent = true,
                 styles = {
                     transparency = true,
-                    italic = true,
+                    italic = false,
                     bold = true
                 }
             })
-
-            vim.cmd("colorscheme rose-pine")
-
-            ColorMyPencils()
         end
     },
-
-
+    {
+        "yorickpeterse/nvim-grey",
+        name = "grey",
+    },
+    {
+        "yorickpeterse/vim-paper",
+        name = "paper",
+    },
+    {
+        "plan9-for-vimspace/acme-colors",
+        name = "acme"
+    },
+    {
+        "catppuccin/nvim",
+        name = "catpuccin"
+    },
+    {
+        "maxmx03/solarized.nvim",
+        name = "solarized",
+        config = function()
+            vim.o.background = 'light'
+            require('solarized').setup({
+                transparent = false, -- enable transparent background
+                palette = 'solarized', -- or selenized
+                styles = {
+                  comments = {},
+                  functions = {},
+                  variables = {},
+                  numbers = {},
+                  constants = {},
+                  parameters = {},
+                  keywords = {},
+                  types = {},
+                },
+                enables = {
+                  bufferline = true,
+                  cmp = true,
+                  diagnostic = true,
+                  dashboard = true,
+                  editor = true,
+                  gitsign = true,
+                  hop = true,
+                  indentblankline = true,
+                  lsp = true,
+                  lspsaga = true,
+                  navic = true,
+                  neogit = true,
+                  neotree = true,
+                  notify = true,
+                  noice = true,
+                  semantic = true,
+                  syntax = true,
+                  telescope = true,
+                  tree = true,
+                  treesitter = true,
+                  todo = true,
+                  whichkey = true,
+                  mini = true,
+                },
+                highlights = {},
+                colors = {},
+                theme = 'default', -- or 'neo'
+                autocmd = true,
+            })
+        end
+    },
+    {
+        "ellisonleao/gruvbox.nvim",
+        name = "gruvbox",
+        priority = 1000,
+        config = function()
+            require('gruvbox').setup({
+            terminal_colors = true, -- add neovim terminal colors
+            undercurl = true,
+            underline = true,
+            bold = true,
+            italic = {
+                strings = true,
+                emphasis = true,
+                comments = true,
+                operators = false,
+                folds = true,
+            },
+            strikethrough = true,
+            invert_selection = false,
+            invert_signs = false,
+            invert_tabline = false,
+            invert_intend_guides = false,
+            inverse = true, -- invert background for search, diffs, statuslines and errors
+            contrast = "", -- can be "hard", "soft" or empty string
+            palette_overrides = {},
+            overrides = {},
+            dim_inactive = false,
+            transparent_mode = false,
+        })
+        ColorMyPencils()
+        end
+    }
 }

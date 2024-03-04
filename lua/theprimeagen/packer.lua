@@ -13,8 +13,8 @@ return require("packer").startup(function(use)
 	  requires = { {"nvim-lua/plenary.nvim"} }
   }
 
-  use("folke/tokyonight.nvim")
-
+  -- use("folke/tokyonight.nvim")
+--[[
   use({
 	  "rose-pine/neovim",
 	  as = "rose-pine",
@@ -22,6 +22,14 @@ return require("packer").startup(function(use)
 		  vim.cmd("colorscheme rose-pine")
 	  end
   })
+--]]
+    use({
+        "yorickpeterse/vim-paper",
+        as = "vim-paper",
+        config = function()
+            vim.cmd("colorscheme vim-paper")
+        end
+        })
 
   use({
       "folke/trouble.nvim",
