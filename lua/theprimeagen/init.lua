@@ -64,6 +64,15 @@ autocmd('LspAttach', {
     end
 })
 
+-- this might fix windows terminal pane cursor issue bug?
+-- https://github.com/neovim/neovim/issues/4396
+autocmd({'VimLeave'}, {
+    callback = function()
+        vim.opt.guicursor =
+        vim.opt.call.chansend(vim.v.opt:stderr "\x1b[ q")
+    end
+})
+
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25

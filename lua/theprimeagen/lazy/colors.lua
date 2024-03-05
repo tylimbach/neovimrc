@@ -138,7 +138,11 @@ return {
             inverse = true, -- invert background for search, diffs, statuslines and errors
             contrast = "", -- can be "hard", "soft" or empty string
             palette_overrides = {},
-            overrides = {},
+            overrides = {
+                -- Delimiter = { fg = '#282828' },
+                -- Special = { fg = '#282828' },
+                -- Operator = { fg = '#282828' },
+            },
             dim_inactive = false,
             transparent_mode = false,
         })

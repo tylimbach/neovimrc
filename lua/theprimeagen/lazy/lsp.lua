@@ -35,7 +35,7 @@ return {
                 "html",
                 "cssls",
                 "zls",
-                "omnisharp"
+                -- "omnisharp"
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -58,11 +58,11 @@ return {
                         }
                     }
                 end,
+                --[[
                 ["omnisharp"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.omnisharp.setup {
                         capabilities = capabilities,
-                        cmd = { "dotnet", "~/AppData/Local/nvim-data/mason/packages/omnisharp/libexec/OmniSharp.dll" },
                         enable_editorconfig_support = true,
                         enable_ms_build_load_projects_on_demand = false,
                         enable_roslyn_analyzers = false,
@@ -72,6 +72,7 @@ return {
                         analyze_open_documents_only = false
                     }
                 end
+                --]]
             }
         })
 
