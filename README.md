@@ -6,6 +6,7 @@ This is personalized for my use, so technologies and plugins may change over tim
 Copy the contents of the repo into your nvim config directory, or clone the repo:
 
 Default MacOS: ~/.config/nvim
+
 Default Windows: %userprofile%/AppData/Local/nvim
 
 ### Dependencies
