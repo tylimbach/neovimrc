@@ -28,6 +28,9 @@ return {
         end)
         vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
         vim.keymap.set('n', '<leader>pr', builtin.lsp_references, {})
+        vim.keymap.set('n', '<leader>b', function()
+            builtin.buffers({ sort_mru=true, ignore_current_buffer=true })
+        end)
     end
 }
 

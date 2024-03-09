@@ -1,10 +1,9 @@
 function ColorMyPencils(color)
 	color = color or "gruvbox"
 	vim.cmd.colorscheme(color)
-    vim.cmd([[colorscheme gruvbox]])
 
-	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+--	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
 end
 
@@ -142,6 +141,7 @@ return {
                 -- Delimiter = { fg = '#282828' },
                 -- Special = { fg = '#282828' },
                 -- Operator = { fg = '#282828' },
+                -- MatchParen = { bg = '#88ffff' }
             },
             dim_inactive = false,
             transparent_mode = false,
