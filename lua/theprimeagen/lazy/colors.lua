@@ -135,13 +135,17 @@ return {
             invert_tabline = false,
             invert_intend_guides = false,
             inverse = true, -- invert background for search, diffs, statuslines and errors
-            contrast = "", -- can be "hard", "soft" or empty string
+            contrast = "soft", -- can be "hard", "soft" or empty string
             palette_overrides = {},
             overrides = {
                 -- Delimiter = { fg = '#282828' },
                 -- Special = { fg = '#282828' },
                 -- Operator = { fg = '#282828' },
                 -- MatchParen = { bg = '#88ffff' }
+                ["@punctuation"] = { link = "GruvboxFg1" },
+                ["@punctuation.bracket"] = { link = "GruvboxFg1" },
+                ["@punctuation.delimiter"] = { link = "GruvboxFg1" },
+                ["@operator"] = { link = "GruvboxFg1" }
             },
             dim_inactive = false,
             transparent_mode = false,

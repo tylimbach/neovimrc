@@ -23,7 +23,15 @@ return {
             cmp_lsp.default_capabilities())
 
         require("fidget").setup({})
-        require("mason").setup()
+        require("mason").setup({
+            [[- doesn't do anything, need to deterine how to auto install non lsps
+            ensure_installed = {
+                "cmakelang",
+                "cpptools",
+                "codelldb",
+            }
+            ]]
+        })
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
@@ -35,6 +43,7 @@ return {
                 "html",
                 "cssls",
                 "zls",
+                "vimls",
                 -- "omnisharp"
             },
             handlers = {

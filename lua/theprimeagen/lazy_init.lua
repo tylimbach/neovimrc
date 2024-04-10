@@ -17,6 +17,7 @@ require("lazy").setup({
 })
 
 ColorMyPencils()
+
 --[[
 require("lazy").setup({
   -- use("~/personal/harpoon")
