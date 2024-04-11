@@ -1,3 +1,16 @@
+local function lsp_highlight_document(client)
+    if client.server_capabilities.documentHighlightProvider then
+        vim.api.nvim_exec([[
+            augroup lsp_document_highlight
+                autocmd! * <buffer>
+                autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+                autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+            augroup END
+            ]],
+        false)
+    end
+end
+
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -50,7 +63,10 @@ return {
                 function(server_name) -- default handler (optional)
 
                     require("lspconfig")[server_name].setup {
-                        capabilities = capabilities
+                        capabilities = capabilities,
+                        on_attach = function(client, bufnr)
+                            lsp_highlight_document(client)
+                        end,
                     }
                 end,
 
@@ -58,6 +74,9 @@ return {
                     local lspconfig = require("lspconfig")
                     lspconfig.lua_ls.setup {
                         capabilities = capabilities,
+                        on_attach = function(client, bufnr)
+                            lsp_highlight_document(client)
+                        end,
                         settings = {
                             Lua = {
                                 diagnostics = {

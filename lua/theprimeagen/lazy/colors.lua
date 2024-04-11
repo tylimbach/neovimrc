@@ -145,7 +145,11 @@ return {
                 ["@punctuation"] = { link = "GruvboxFg1" },
                 ["@punctuation.bracket"] = { link = "GruvboxFg1" },
                 ["@punctuation.delimiter"] = { link = "GruvboxFg1" },
-                ["@operator"] = { link = "GruvboxFg1" }
+                ["@operator"] = { link = "GruvboxFg1" },
+                LspReferenceRead = { link = "CursorLine" },
+                LspReferenceText = { link = "CursorLine" },
+                LspReferenceWrite = { link = "CursorLine" },
+
             },
             dim_inactive = false,
             transparent_mode = false,
